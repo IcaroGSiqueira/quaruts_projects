@@ -1,0 +1,75 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/home/icaro/quartus_projects/trabalho1/meally_abc/simulation/modelsim
+Emeally_abc
+Z1 w1588107161
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 d/home/icaro/quartus_projects/trabalho1/meally_abc/simulation/modelsim
+Z5 8/home/icaro/quartus_projects/trabalho1/meally_abc/meally_abc.vhd
+Z6 F/home/icaro/quartus_projects/trabalho1/meally_abc/meally_abc.vhd
+l0
+L4
+V6kjEaiQh1<iDoP92SIomj1
+Z7 OV;C;10.1d;51
+31
+Z8 !s108 1588107621.915331
+Z9 !s90 -reportprogress|300|-93|-work|work|/home/icaro/quartus_projects/trabalho1/meally_abc/meally_abc.vhd|
+Z10 !s107 /home/icaro/quartus_projects/trabalho1/meally_abc/meally_abc.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+!s100 9Megm[?o]P8[:NSDc1^?O3
+!i10b 1
+Aarquitetura
+R2
+R3
+DEx4 work 10 meally_abc 0 22 6kjEaiQh1<iDoP92SIomj1
+l18
+L12
+VII6J7jeCec>[R6T<N`M4Z2
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 aoVfbU0Fck=zg2F_B;Ybj0
+!i10b 1
+Etb_meally_abc
+Z13 w1588107607
+R2
+R3
+R4
+Z14 8/home/icaro/quartus_projects/trabalho1/meally_abc/tb_meally_abc.vhd
+Z15 F/home/icaro/quartus_projects/trabalho1/meally_abc/tb_meally_abc.vhd
+l0
+L4
+VjBUnXghE78nimVGPbPB<=0
+!s100 6Xnzk2Ym0[9BCNLb`@AZJ3
+R7
+31
+!i10b 1
+Z16 !s108 1588107621.931272
+Z17 !s90 -reportprogress|300|-93|-work|work|/home/icaro/quartus_projects/trabalho1/meally_abc/tb_meally_abc.vhd|
+Z18 !s107 /home/icaro/quartus_projects/trabalho1/meally_abc/tb_meally_abc.vhd|
+R11
+R12
+Atestbench
+R2
+R3
+DEx4 work 13 tb_meally_abc 0 22 jBUnXghE78nimVGPbPB<=0
+l23
+L7
+VHLjicgzl98Skc]dW:_9XZ3
+!s100 fV9zf96O=2QPD96mT7@JP3
+R7
+31
+!i10b 1
+R16
+R17
+R18
+R11
+R12

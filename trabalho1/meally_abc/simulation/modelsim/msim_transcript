@@ -1,0 +1,43 @@
+# do meally_abc_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying /home/icaro/altera/13.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied /home/icaro/altera/13.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {/home/icaro/quartus_projects/trabalho1/meally_abc/meally_abc.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity meally_abc
+# -- Compiling architecture arquitetura of meally_abc
+# 
+# vcom -93 -work work {/home/icaro/quartus_projects/trabalho1/meally_abc/tb_meally_abc.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_meally_abc
+# -- Compiling architecture testbench of tb_meally_abc
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiiils -L rtl_work -L work -voptargs="+acc"  tb_meally_abc
+# vsim -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiiils -L rtl_work -L work -voptargs=\"+acc\" -t 1ps tb_meally_abc 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_meally_abc(testbench)
+# Loading work.meally_abc(arquitetura)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Break key hit 
+# Simulation stop requested.
