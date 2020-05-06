@@ -39,6 +39,3 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/icaro/git_repo/quaruts_projects/trabalho1/moore_abc/simulation/modelsim/wave.do
-# Break key hit 
-# Simulation stop requested.

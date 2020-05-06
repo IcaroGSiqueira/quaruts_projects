@@ -12,12 +12,12 @@ ARCHITECTURE testbench OF tb_meally_abc IS
 	SIGNAL saida	: std_logic;
 	
 	COMPONENT meally_abc
-	PORT (
-		clk		: IN std_logic; 
-		rst		: IN std_logic;
-		entrada	: IN std_logic_vector(1 DOWNTO 0);
-		saida		: OUT std_logic
-	);
+		PORT (
+			clk		: IN std_logic; 
+			rst		: IN std_logic;
+			entrada	: IN std_logic_vector(1 DOWNTO 0);
+			saida		: OUT std_logic
+		);
 	END COMPONENT;
 
 BEGIN 
@@ -52,8 +52,15 @@ BEGIN
 		wait for 10 ns;
 		entrada <= "01";
 		wait for 10 ns;
+		entrada <= "00";
+		wait for 10 ns;
 		entrada <= "10";
 		wait for 10 ns;
-        
+		entrada <= "00";
+		wait for 10 ns;
+		entrada <= "01";
+		wait for 10 ns;
+		entrada <= "10";
+		wait for 10 ns;
 	END PROCESS;
 END testbench;

@@ -4,7 +4,7 @@ K3
 cModel Technology
 Z0 d/home/icaro/git_repo/quaruts_projects/trabalho1/meally_abc/simulation/modelsim
 Emeally_abc
-Z1 w1588777533
+Z1 w1588778092
 Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
 Z4 d/home/icaro/git_repo/quaruts_projects/trabalho1/meally_abc/simulation/modelsim
@@ -15,7 +15,7 @@ L4
 V6kjEaiQh1<iDoP92SIomj1
 Z7 OV;C;10.1d;51
 31
-Z8 !s108 1588777622.026482
+Z8 !s108 1588778630.318430
 Z9 !s90 -reportprogress|300|-93|-work|work|/home/icaro/git_repo/quaruts_projects/trabalho1/meally_abc/meally_abc.vhd|
 Z10 !s107 /home/icaro/git_repo/quaruts_projects/trabalho1/meally_abc/meally_abc.vhd|
 Z11 o-93 -work work -O0
@@ -39,7 +39,7 @@ R12
 !s100 :L2h>J5Sd_Rc^YnzRmcko2
 !i10b 1
 Etb_meally_abc
-Z13 w1588183405
+Z13 w1588778619
 R2
 R3
 R4
@@ -52,7 +52,7 @@ VjBUnXghE78nimVGPbPB<=0
 R7
 31
 !i10b 1
-Z16 !s108 1588777622.154906
+Z16 !s108 1588778630.334184
 Z17 !s90 -reportprogress|300|-93|-work|work|/home/icaro/git_repo/quaruts_projects/trabalho1/meally_abc/tb_meally_abc.vhd|
 Z18 !s107 /home/icaro/git_repo/quaruts_projects/trabalho1/meally_abc/tb_meally_abc.vhd|
 R11
@@ -63,8 +63,8 @@ R3
 DEx4 work 13 tb_meally_abc 0 22 jBUnXghE78nimVGPbPB<=0
 l23
 L7
-VUCfBFM>1P6gd[K3dM<LU43
-!s100 ljmm6e=Jo7J8UQE>bEYMO2
+VX1^[1dN;ZBWCF60ziB2;C3
+!s100 g;0@99VYR8k=2N[WiYQ[32
 R7
 31
 !i10b 1
