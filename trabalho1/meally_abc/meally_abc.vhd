@@ -2,11 +2,11 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
 ENTITY meally_abc IS
-PORT (
-	clk, rst	: IN std_logic;
-   entrada	: IN std_logic_vector(1 DOWNTO 0);
-	saida		: OUT std_logic
-);
+	PORT (
+		clk, rst	: IN std_logic;
+		entrada	: IN std_logic_vector(1 DOWNTO 0);
+		saida		: OUT std_logic
+	);
 END meally_abc;
 
 ARCHITECTURE arquitetura OF meally_abc IS
