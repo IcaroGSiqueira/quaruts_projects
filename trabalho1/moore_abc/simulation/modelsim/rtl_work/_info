@@ -1,0 +1,75 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/home/icaro/git_repo/quaruts_projects/trabalho1/moore_abc/simulation/modelsim
+Emoore_abc
+Z1 w1588111206
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 d/home/icaro/git_repo/quaruts_projects/trabalho1/moore_abc/simulation/modelsim
+Z5 8/home/icaro/git_repo/quaruts_projects/trabalho1/moore_abc/moore_abc.vhd
+Z6 F/home/icaro/git_repo/quaruts_projects/trabalho1/moore_abc/moore_abc.vhd
+l0
+L4
+VnJH;nJB;YbWoN?WSj>j@51
+Z7 OV;C;10.1d;51
+31
+Z8 !s108 1588185386.922235
+Z9 !s90 -reportprogress|300|-93|-work|work|/home/icaro/git_repo/quaruts_projects/trabalho1/moore_abc/moore_abc.vhd|
+Z10 !s107 /home/icaro/git_repo/quaruts_projects/trabalho1/moore_abc/moore_abc.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+!s100 @0PTdR4Hjb7L7J:F@:gj52
+!i10b 1
+Aarquitetura
+R2
+R3
+DEx4 work 9 moore_abc 0 22 nJH;nJB;YbWoN?WSj>j@51
+l17
+L12
+Va:DX@Gz=PmQ32jdj?3SHb0
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 =^`bmGGY^3z:]a:<:Dg^40
+!i10b 1
+Etb_moore_abc
+Z13 w1588184532
+R2
+R3
+R4
+Z14 8/home/icaro/git_repo/quaruts_projects/trabalho1/moore_abc/tb_moore_abc.vhd
+Z15 F/home/icaro/git_repo/quaruts_projects/trabalho1/moore_abc/tb_moore_abc.vhd
+l0
+L4
+VH5k>j:ja2YF`oE=iaVNLB1
+!s100 dQ9Vo8>abeA:MO6VDbSYe3
+R7
+31
+!i10b 1
+Z16 !s108 1588185387.036185
+Z17 !s90 -reportprogress|300|-93|-work|work|/home/icaro/git_repo/quaruts_projects/trabalho1/moore_abc/tb_moore_abc.vhd|
+Z18 !s107 /home/icaro/git_repo/quaruts_projects/trabalho1/moore_abc/tb_moore_abc.vhd|
+R11
+R12
+Atestbench
+R2
+R3
+DEx4 work 12 tb_moore_abc 0 22 H5k>j:ja2YF`oE=iaVNLB1
+l23
+L7
+VKG?C`_oLYm2^i:7U5C;QM0
+!s100 DI:B843_1FXkjK3=:BA3^2
+R7
+31
+!i10b 1
+R16
+R17
+R18
+R11
+R12

@@ -9,7 +9,7 @@
 # ** Warning: Copied /home/icaro/altera/13.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vcom -93 -work work {/home/icaro/quartus_projects/trabalho1/meally_abc/meally_abc.vhd}
+# vcom -93 -work work {/home/icaro/git_repo/quaruts_projects/trabalho1/meally_abc/meally_abc.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -17,7 +17,7 @@
 # -- Compiling entity meally_abc
 # -- Compiling architecture arquitetura of meally_abc
 # 
-# vcom -93 -work work {/home/icaro/quartus_projects/trabalho1/meally_abc/tb_meally_abc.vhd}
+# vcom -93 -work work {/home/icaro/git_repo/quaruts_projects/trabalho1/meally_abc/tb_meally_abc.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -39,5 +39,3 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Break key hit 
-# Simulation stop requested.

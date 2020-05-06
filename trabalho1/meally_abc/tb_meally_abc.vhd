@@ -33,15 +33,15 @@ BEGIN
 	clock: PROCESS
 	BEGIN 
 		clk <= '0';
-		wait for 10 ns;
+		wait for 5 ns;
 		clk <= '1';
-		wait for 10 ns;
+		wait for 5 ns;
 	END PROCESS;
 				
 	reset: PROCESS
 	BEGIN
 		rst <= '1';
-		wait for 20 ns;
+		wait for 10 ns;
 		rst <= '0';
 		wait;  
 	END PROCESS;
@@ -49,11 +49,11 @@ BEGIN
 	entry: PROCESS
 	BEGIN 
 		entrada <= "00";
-		wait for 20 ns;
+		wait for 10 ns;
 		entrada <= "01";
-		wait for 20 ns;
+		wait for 10 ns;
 		entrada <= "10";
-		wait for 20 ns;
+		wait for 10 ns;
         
 	END PROCESS;
 END testbench;
