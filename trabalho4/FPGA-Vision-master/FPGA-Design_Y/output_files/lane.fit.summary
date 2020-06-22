@@ -1,0 +1,19 @@
+Fitter Status : Successful - Mon Jun 22 01:44:17 2020
+Quartus II 64-Bit Version : 13.1.4 Build 182 03/12/2014 SJ Web Edition
+Revision Name : lane
+Top-level Entity Name : lane
+Family : Cyclone V
+Device : 5CEBA2F17C6
+Timing Models : Final
+Logic utilization (in ALMs) : 180 / 9,430 ( 2 % )
+Total registers : 374
+Total pins : 63 / 128 ( 49 % )
+Total virtual pins : 0
+Total block memory bits : 96,256 / 1,802,240 ( 5 % )
+Total DSP Blocks : 2 / 25 ( 8 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI TX Channels : 0
+Total PLLs : 0 / 4 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

@@ -1,0 +1,982 @@
+Analysis & Synthesis report for lane
+Mon Jun 22 01:43:53 2020
+Quartus II 64-Bit Version 13.1.4 Build 182 03/12/2014 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis DSP Block Usage Summary
+ 10. Analysis & Synthesis IP Cores Summary
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Registers Added for RAM Pass-Through Logic
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for lane_sobel:sobel|lane_g_root_IP:square_root|altsyncram:altsyncram_component|altsyncram_f024:auto_generated
+ 17. Source assignments for lane_sobel:sobel|lane_linemem:mem_1|altsyncram:ram_rtl_0|altsyncram_0cn1:auto_generated
+ 18. Source assignments for lane_sobel:sobel|lane_linemem:mem_0|altsyncram:ram_rtl_0|altsyncram_0cn1:auto_generated
+ 19. Parameter Settings for User Entity Instance: lane_sobel:sobel|lane_g_root_IP:square_root|altsyncram:altsyncram_component
+ 20. Parameter Settings for User Entity Instance: lane_sync:control
+ 21. Parameter Settings for Inferred Entity Instance: lane_sobel:sobel|lane_linemem:mem_1|altsyncram:ram_rtl_0
+ 22. Parameter Settings for Inferred Entity Instance: lane_sobel:sobel|lane_linemem:mem_0|altsyncram:ram_rtl_0
+ 23. altsyncram Parameter Settings by Entity Instance
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++---------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Jun 22 01:43:53 2020      ;
+; Quartus II 64-Bit Version       ; 13.1.4 Build 182 03/12/2014 SJ Web Edition ;
+; Revision Name                   ; lane                                       ;
+; Top-level Entity Name           ; lane                                       ;
+; Family                          ; Cyclone V                                  ;
+; Logic utilization (in ALMs)     ; N/A                                        ;
+; Total registers                 ; 418                                        ;
+; Total pins                      ; 63                                         ;
+; Total virtual pins              ; 0                                          ;
+; Total block memory bits         ; 96,256                                     ;
+; Total DSP Blocks                ; 2                                          ;
+; Total HSSI RX PCSs              ; 0                                          ;
+; Total HSSI PMA RX Deserializers ; 0                                          ;
+; Total HSSI TX PCSs              ; 0                                          ;
+; Total HSSI TX Channels          ; 0                                          ;
+; Total PLLs                      ; 0                                          ;
+; Total DLLs                      ; 0                                          ;
++---------------------------------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA2F17C6        ;                    ;
+; Top-level entity name                                                           ; lane               ; lane               ;
+; Family name                                                                     ; Cyclone V          ; Cyclone IV GX      ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                       ; Off                ; Off                ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization                                                    ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Synthesis Seed                                                                  ; 1                  ; 1                  ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                          ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                            ; Library ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------+---------+
+; lane_sync.vhd                    ; yes             ; User VHDL File                         ; /home/icaro/git_repo/quaruts_projects/trabalho4/FPGA-Vision-master/FPGA-Design_Y/lane_sync.vhd          ;         ;
+; lane_g_root_IP.vhd               ; yes             ; User Wizard-Generated File             ; /home/icaro/git_repo/quaruts_projects/trabalho4/FPGA-Vision-master/FPGA-Design_Y/lane_g_root_IP.vhd     ;         ;
+; lane_g_matrix.vhd                ; yes             ; User VHDL File                         ; /home/icaro/git_repo/quaruts_projects/trabalho4/FPGA-Vision-master/FPGA-Design_Y/lane_g_matrix.vhd      ;         ;
+; lane_linemem.vhd                 ; yes             ; User VHDL File                         ; /home/icaro/git_repo/quaruts_projects/trabalho4/FPGA-Vision-master/FPGA-Design_Y/lane_linemem.vhd       ;         ;
+; lane_sobel.vhd                   ; yes             ; User VHDL File                         ; /home/icaro/git_repo/quaruts_projects/trabalho4/FPGA-Vision-master/FPGA-Design_Y/lane_sobel.vhd         ;         ;
+; lane.vhd                         ; yes             ; User VHDL File                         ; /home/icaro/git_repo/quaruts_projects/trabalho4/FPGA-Vision-master/FPGA-Design_Y/lane.vhd               ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; /home/icaro/altera/13.1/quartus/libraries/megafunctions/altsyncram.tdf                                  ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; /home/icaro/altera/13.1/quartus/libraries/megafunctions/stratix_ram_block.inc                           ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; /home/icaro/altera/13.1/quartus/libraries/megafunctions/lpm_mux.inc                                     ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; /home/icaro/altera/13.1/quartus/libraries/megafunctions/lpm_decode.inc                                  ;         ;
+; aglobal131.inc                   ; yes             ; Megafunction                           ; /home/icaro/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                                  ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; /home/icaro/altera/13.1/quartus/libraries/megafunctions/a_rdenreg.inc                                   ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; /home/icaro/altera/13.1/quartus/libraries/megafunctions/altrom.inc                                      ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; /home/icaro/altera/13.1/quartus/libraries/megafunctions/altram.inc                                      ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; /home/icaro/altera/13.1/quartus/libraries/megafunctions/altdpram.inc                                    ;         ;
+; db/altsyncram_f024.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/icaro/git_repo/quaruts_projects/trabalho4/FPGA-Vision-master/FPGA-Design_Y/db/altsyncram_f024.tdf ;         ;
+; lane_g_root.mif                  ; yes             ; Auto-Found Memory Initialization File  ; /home/icaro/git_repo/quaruts_projects/trabalho4/FPGA-Vision-master/FPGA-Design_Y/lane_g_root.mif        ;         ;
+; db/altsyncram_0cn1.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/icaro/git_repo/quaruts_projects/trabalho4/FPGA-Vision-master/FPGA-Design_Y/db/altsyncram_0cn1.tdf ;         ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 239       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 231       ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 15        ;
+;     -- 5 input functions                    ; 5         ;
+;     -- 4 input functions                    ; 3         ;
+;     -- <=3 input functions                  ; 208       ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 418       ;
+;                                             ;           ;
+; I/O pins                                    ; 63        ;
+; Total MLAB memory bits                      ; 0         ;
+; Total block memory bits                     ; 96256     ;
+; Total DSP Blocks                            ; 2         ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 451       ;
+; Total fan-out                               ; 2490      ;
+; Average fan-out                             ; 3.08      ;
++---------------------------------------------+-----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                      ;
++----------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                              ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
+; |lane                                        ; 231 (9)           ; 418 (55)     ; 96256             ; 2          ; 63   ; 0            ; |lane                                                                                                            ; work         ;
+;    |lane_sobel:sobel|                        ; 222 (66)          ; 342 (102)    ; 96256             ; 2          ; 0    ; 0            ; |lane|lane_sobel:sobel                                                                                           ; work         ;
+;       |lane_g_matrix:g_x|                    ; 60 (60)           ; 56 (56)      ; 0                 ; 1          ; 0    ; 0            ; |lane|lane_sobel:sobel|lane_g_matrix:g_x                                                                         ; work         ;
+;       |lane_g_matrix:g_y|                    ; 60 (60)           ; 68 (68)      ; 0                 ; 1          ; 0    ; 0            ; |lane|lane_sobel:sobel|lane_g_matrix:g_y                                                                         ; work         ;
+;       |lane_g_root_IP:square_root|           ; 0 (0)             ; 0 (0)        ; 65536             ; 0          ; 0    ; 0            ; |lane|lane_sobel:sobel|lane_g_root_IP:square_root                                                                ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 65536             ; 0          ; 0    ; 0            ; |lane|lane_sobel:sobel|lane_g_root_IP:square_root|altsyncram:altsyncram_component                                ; work         ;
+;             |altsyncram_f024:auto_generated| ; 0 (0)             ; 0 (0)        ; 65536             ; 0          ; 0    ; 0            ; |lane|lane_sobel:sobel|lane_g_root_IP:square_root|altsyncram:altsyncram_component|altsyncram_f024:auto_generated ; work         ;
+;       |lane_linemem:mem_0|                   ; 31 (31)           ; 69 (69)      ; 15360             ; 0          ; 0    ; 0            ; |lane|lane_sobel:sobel|lane_linemem:mem_0                                                                        ; work         ;
+;          |altsyncram:ram_rtl_0|              ; 0 (0)             ; 0 (0)        ; 15360             ; 0          ; 0    ; 0            ; |lane|lane_sobel:sobel|lane_linemem:mem_0|altsyncram:ram_rtl_0                                                   ; work         ;
+;             |altsyncram_0cn1:auto_generated| ; 0 (0)             ; 0 (0)        ; 15360             ; 0          ; 0    ; 0            ; |lane|lane_sobel:sobel|lane_linemem:mem_0|altsyncram:ram_rtl_0|altsyncram_0cn1:auto_generated                    ; work         ;
+;       |lane_linemem:mem_1|                   ; 5 (5)             ; 47 (47)      ; 15360             ; 0          ; 0    ; 0            ; |lane|lane_sobel:sobel|lane_linemem:mem_1                                                                        ; work         ;
+;          |altsyncram:ram_rtl_0|              ; 0 (0)             ; 0 (0)        ; 15360             ; 0          ; 0    ; 0            ; |lane|lane_sobel:sobel|lane_linemem:mem_1|altsyncram:ram_rtl_0                                                   ; work         ;
+;             |altsyncram_0cn1:auto_generated| ; 0 (0)             ; 0 (0)        ; 15360             ; 0          ; 0    ; 0            ; |lane|lane_sobel:sobel|lane_linemem:mem_1|altsyncram:ram_rtl_0|altsyncram_0cn1:auto_generated                    ; work         ;
+;    |lane_sync:control|                       ; 0 (0)             ; 21 (21)      ; 0                 ; 0          ; 0    ; 0            ; |lane|lane_sync:control                                                                                          ; work         ;
++----------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                      ;
++-----------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-----------------+
+; Name                                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF             ;
++-----------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-----------------+
+; lane_sobel:sobel|lane_g_root_IP:square_root|altsyncram:altsyncram_component|altsyncram_f024:auto_generated|ALTSYNCRAM ; AUTO ; ROM              ; 8192         ; 8            ; --           ; --           ; 65536 ; lane_g_root.mif ;
+; lane_sobel:sobel|lane_linemem:mem_0|altsyncram:ram_rtl_0|altsyncram_0cn1:auto_generated|ALTSYNCRAM                    ; AUTO ; Simple Dual Port ; 1280         ; 12           ; 1280         ; 12           ; 15360 ; None            ;
+; lane_sobel:sobel|lane_linemem:mem_1|altsyncram:ram_rtl_0|altsyncram_0cn1:auto_generated|ALTSYNCRAM                    ; AUTO ; Simple Dual Port ; 1280         ; 12           ; 1280         ; 12           ; 15360 ; None            ;
++-----------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary                               ;
++--------------------+-------------+---------------------+-------------------+
+; Statistic          ; Number Used ; Available per Block ; Maximum Available ;
++--------------------+-------------+---------------------+-------------------+
+; Independent 18x18  ; 2           ; 2.00                ; --                ;
+; DSP Block          ; 2           ; --                  ; --                ;
+; DSP 18-bit Element ; 2           ; 2.00                ; --                ;
+; Signed Multiplier  ; 2           ; --                  ; --                ;
++--------------------+-------------+---------------------+-------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                   ;
++--------+--------------+---------+--------------+--------------+---------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                   ; IP Include File                                                                                     ;
++--------+--------------+---------+--------------+--------------+---------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+; Altera ; ROM: 1-PORT  ; N/A     ; N/A          ; N/A          ; |lane|lane_sobel:sobel|lane_g_root_IP:square_root ; /home/icaro/git_repo/quaruts_projects/trabalho4/FPGA-Vision-master/FPGA-Design_Y/lane_g_root_IP.vhd ;
++--------+--------------+---------+--------------+--------------+---------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                  ;
++----------------------------------------------------+----------------------------------------------------------------+
+; Register name                                      ; Reason for Removal                                             ;
++----------------------------------------------------+----------------------------------------------------------------+
+; lane_sobel:sobel|g_sum_2[17]                       ; Stuck at GND due to stuck port data_in                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m2[0]       ; Merged with lane_sobel:sobel|tap_lb[0]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m2[1]       ; Merged with lane_sobel:sobel|tap_lb[1]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m2[2]       ; Merged with lane_sobel:sobel|tap_lb[2]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m2[3]       ; Merged with lane_sobel:sobel|tap_lb[3]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m2[4]       ; Merged with lane_sobel:sobel|tap_lb[4]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m2[5]       ; Merged with lane_sobel:sobel|tap_lb[5]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m2[6]       ; Merged with lane_sobel:sobel|tap_lb[6]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m2[7]       ; Merged with lane_sobel:sobel|tap_lb[7]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m2[8]       ; Merged with lane_sobel:sobel|tap_lb[8]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m2[9]       ; Merged with lane_sobel:sobel|tap_lb[9]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m2[10]      ; Merged with lane_sobel:sobel|tap_lb[10]                        ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m2[11]      ; Merged with lane_sobel:sobel|tap_lb[11]                        ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1b[0]      ; Merged with lane_sobel:sobel|tap_cb[0]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m1b[0]      ; Merged with lane_sobel:sobel|tap_cb[0]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1b[1]      ; Merged with lane_sobel:sobel|tap_cb[1]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m1b[1]      ; Merged with lane_sobel:sobel|tap_cb[1]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1b[2]      ; Merged with lane_sobel:sobel|tap_cb[2]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m1b[2]      ; Merged with lane_sobel:sobel|tap_cb[2]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1b[3]      ; Merged with lane_sobel:sobel|tap_cb[3]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m1b[3]      ; Merged with lane_sobel:sobel|tap_cb[3]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1b[4]      ; Merged with lane_sobel:sobel|tap_cb[4]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m1b[4]      ; Merged with lane_sobel:sobel|tap_cb[4]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1b[5]      ; Merged with lane_sobel:sobel|tap_cb[5]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m1b[5]      ; Merged with lane_sobel:sobel|tap_cb[5]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1b[6]      ; Merged with lane_sobel:sobel|tap_cb[6]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m1b[6]      ; Merged with lane_sobel:sobel|tap_cb[6]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1b[7]      ; Merged with lane_sobel:sobel|tap_cb[7]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m1b[7]      ; Merged with lane_sobel:sobel|tap_cb[7]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1b[8]      ; Merged with lane_sobel:sobel|tap_cb[8]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m1b[8]      ; Merged with lane_sobel:sobel|tap_cb[8]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1b[9]      ; Merged with lane_sobel:sobel|tap_cb[9]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m1b[9]      ; Merged with lane_sobel:sobel|tap_cb[9]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1b[10]     ; Merged with lane_sobel:sobel|tap_cb[10]                        ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m1b[10]     ; Merged with lane_sobel:sobel|tap_cb[10]                        ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1b[11]     ; Merged with lane_sobel:sobel|tap_cb[11]                        ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_m1b[11]     ; Merged with lane_sobel:sobel|tap_cb[11]                        ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p2[0]       ; Merged with lane_sobel:sobel|tap_cc[0]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p2[1]       ; Merged with lane_sobel:sobel|tap_cc[1]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p2[2]       ; Merged with lane_sobel:sobel|tap_cc[2]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p2[3]       ; Merged with lane_sobel:sobel|tap_cc[3]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p2[4]       ; Merged with lane_sobel:sobel|tap_cc[4]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p2[5]       ; Merged with lane_sobel:sobel|tap_cc[5]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p2[6]       ; Merged with lane_sobel:sobel|tap_cc[6]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p2[7]       ; Merged with lane_sobel:sobel|tap_cc[7]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p2[8]       ; Merged with lane_sobel:sobel|tap_cc[8]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p2[9]       ; Merged with lane_sobel:sobel|tap_cc[9]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p2[10]      ; Merged with lane_sobel:sobel|tap_cc[10]                        ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p2[11]      ; Merged with lane_sobel:sobel|tap_cc[11]                        ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p2[0]       ; Merged with lane_sobel:sobel|tap_lt[0]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p2[1]       ; Merged with lane_sobel:sobel|tap_lt[1]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p2[2]       ; Merged with lane_sobel:sobel|tap_lt[2]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p2[3]       ; Merged with lane_sobel:sobel|tap_lt[3]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p2[4]       ; Merged with lane_sobel:sobel|tap_lt[4]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p2[5]       ; Merged with lane_sobel:sobel|tap_lt[5]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p2[6]       ; Merged with lane_sobel:sobel|tap_lt[6]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p2[7]       ; Merged with lane_sobel:sobel|tap_lt[7]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p2[8]       ; Merged with lane_sobel:sobel|tap_lt[8]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p2[9]       ; Merged with lane_sobel:sobel|tap_lt[9]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p2[10]      ; Merged with lane_sobel:sobel|tap_lt[10]                        ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p2[11]      ; Merged with lane_sobel:sobel|tap_lt[11]                        ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1a[0]      ; Merged with lane_sobel:sobel|tap_ct[0]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p1b[0]      ; Merged with lane_sobel:sobel|tap_ct[0]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1a[1]      ; Merged with lane_sobel:sobel|tap_ct[1]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p1b[1]      ; Merged with lane_sobel:sobel|tap_ct[1]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1a[2]      ; Merged with lane_sobel:sobel|tap_ct[2]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p1b[2]      ; Merged with lane_sobel:sobel|tap_ct[2]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1a[3]      ; Merged with lane_sobel:sobel|tap_ct[3]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p1b[3]      ; Merged with lane_sobel:sobel|tap_ct[3]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1a[4]      ; Merged with lane_sobel:sobel|tap_ct[4]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p1b[4]      ; Merged with lane_sobel:sobel|tap_ct[4]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1a[5]      ; Merged with lane_sobel:sobel|tap_ct[5]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p1b[5]      ; Merged with lane_sobel:sobel|tap_ct[5]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1a[6]      ; Merged with lane_sobel:sobel|tap_ct[6]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p1b[6]      ; Merged with lane_sobel:sobel|tap_ct[6]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1a[7]      ; Merged with lane_sobel:sobel|tap_ct[7]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p1b[7]      ; Merged with lane_sobel:sobel|tap_ct[7]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1a[8]      ; Merged with lane_sobel:sobel|tap_ct[8]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p1b[8]      ; Merged with lane_sobel:sobel|tap_ct[8]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1a[9]      ; Merged with lane_sobel:sobel|tap_ct[9]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p1b[9]      ; Merged with lane_sobel:sobel|tap_ct[9]                         ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1a[10]     ; Merged with lane_sobel:sobel|tap_ct[10]                        ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p1b[10]     ; Merged with lane_sobel:sobel|tap_ct[10]                        ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_p1a[11]     ; Merged with lane_sobel:sobel|tap_ct[11]                        ;
+; lane_sobel:sobel|lane_g_matrix:g_y|lum_p1b[11]     ; Merged with lane_sobel:sobel|tap_ct[11]                        ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1b[0]      ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_m1a[0]      ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1b[1]      ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_m1a[1]      ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1b[2]      ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_m1a[2]      ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1b[3]      ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_m1a[3]      ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1b[4]      ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_m1a[4]      ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1b[5]      ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_m1a[5]      ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1b[6]      ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_m1a[6]      ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1b[7]      ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_m1a[7]      ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1b[8]      ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_m1a[8]      ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1b[9]      ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_m1a[9]      ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1b[10]     ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_m1a[10]     ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1b[11]     ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_m1a[11]     ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1a[0]      ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_p1a[0]      ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1a[1]      ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_p1a[1]      ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1a[2]      ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_p1a[2]      ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1a[3]      ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_p1a[3]      ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1a[4]      ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_p1a[4]      ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1a[5]      ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_p1a[5]      ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1a[6]      ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_p1a[6]      ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1a[7]      ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_p1a[7]      ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1a[8]      ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_p1a[8]      ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1a[9]      ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_p1a[9]      ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1a[10]     ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_p1a[10]     ;
+; lane_sobel:sobel|lane_g_matrix:g_x|lum_m1a[11]     ; Merged with lane_sobel:sobel|lane_g_matrix:g_y|lum_p1a[11]     ;
+; lane_sobel:sobel|lane_linemem:mem_1|wr_address[0]  ; Merged with lane_sobel:sobel|lane_linemem:mem_0|wr_address[0]  ;
+; lane_sobel:sobel|lane_linemem:mem_1|wr_address[1]  ; Merged with lane_sobel:sobel|lane_linemem:mem_0|wr_address[1]  ;
+; lane_sobel:sobel|lane_linemem:mem_1|wr_address[2]  ; Merged with lane_sobel:sobel|lane_linemem:mem_0|wr_address[2]  ;
+; lane_sobel:sobel|lane_linemem:mem_1|wr_address[3]  ; Merged with lane_sobel:sobel|lane_linemem:mem_0|wr_address[3]  ;
+; lane_sobel:sobel|lane_linemem:mem_1|wr_address[4]  ; Merged with lane_sobel:sobel|lane_linemem:mem_0|wr_address[4]  ;
+; lane_sobel:sobel|lane_linemem:mem_1|wr_address[5]  ; Merged with lane_sobel:sobel|lane_linemem:mem_0|wr_address[5]  ;
+; lane_sobel:sobel|lane_linemem:mem_1|wr_address[6]  ; Merged with lane_sobel:sobel|lane_linemem:mem_0|wr_address[6]  ;
+; lane_sobel:sobel|lane_linemem:mem_1|wr_address[7]  ; Merged with lane_sobel:sobel|lane_linemem:mem_0|wr_address[7]  ;
+; lane_sobel:sobel|lane_linemem:mem_1|wr_address[8]  ; Merged with lane_sobel:sobel|lane_linemem:mem_0|wr_address[8]  ;
+; lane_sobel:sobel|lane_linemem:mem_1|wr_address[9]  ; Merged with lane_sobel:sobel|lane_linemem:mem_0|wr_address[9]  ;
+; lane_sobel:sobel|lane_linemem:mem_1|wr_address[10] ; Merged with lane_sobel:sobel|lane_linemem:mem_0|wr_address[10] ;
+; lane_sobel:sobel|lane_linemem:mem_1|rd_address[0]  ; Merged with lane_sobel:sobel|lane_linemem:mem_0|rd_address[0]  ;
+; lane_sobel:sobel|lane_linemem:mem_1|rd_address[1]  ; Merged with lane_sobel:sobel|lane_linemem:mem_0|rd_address[1]  ;
+; lane_sobel:sobel|lane_linemem:mem_1|rd_address[2]  ; Merged with lane_sobel:sobel|lane_linemem:mem_0|rd_address[2]  ;
+; lane_sobel:sobel|lane_linemem:mem_1|rd_address[3]  ; Merged with lane_sobel:sobel|lane_linemem:mem_0|rd_address[3]  ;
+; lane_sobel:sobel|lane_linemem:mem_1|rd_address[4]  ; Merged with lane_sobel:sobel|lane_linemem:mem_0|rd_address[4]  ;
+; lane_sobel:sobel|lane_linemem:mem_1|rd_address[5]  ; Merged with lane_sobel:sobel|lane_linemem:mem_0|rd_address[5]  ;
+; lane_sobel:sobel|lane_linemem:mem_1|rd_address[6]  ; Merged with lane_sobel:sobel|lane_linemem:mem_0|rd_address[6]  ;
+; lane_sobel:sobel|lane_linemem:mem_1|rd_address[7]  ; Merged with lane_sobel:sobel|lane_linemem:mem_0|rd_address[7]  ;
+; lane_sobel:sobel|lane_linemem:mem_1|rd_address[8]  ; Merged with lane_sobel:sobel|lane_linemem:mem_0|rd_address[8]  ;
+; lane_sobel:sobel|lane_linemem:mem_1|rd_address[9]  ; Merged with lane_sobel:sobel|lane_linemem:mem_0|rd_address[9]  ;
+; lane_sobel:sobel|lane_linemem:mem_1|rd_address[10] ; Merged with lane_sobel:sobel|lane_linemem:mem_0|rd_address[10] ;
+; Total Number of Removed Registers = 131            ;                                                                ;
++----------------------------------------------------+----------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 418   ;
+; Number of registers using Synchronous Clear  ; 41    ;
+; Number of registers using Synchronous Load   ; 24    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 35    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------+
+; Inverted Register Statistics                         ;
++--------------------------------------------+---------+
+; Inverted Register                          ; Fan out ;
++--------------------------------------------+---------+
+; lane_sobel:sobel|lane_g_matrix:g_y|sum[0]  ; 2       ;
+; lane_sobel:sobel|lane_g_matrix:g_y|sum[14] ; 2       ;
+; lane_sobel:sobel|lane_g_matrix:g_x|sum[0]  ; 2       ;
+; lane_sobel:sobel|lane_g_matrix:g_x|sum[14] ; 2       ;
+; Total number of inverted registers = 4     ;         ;
++--------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Registers Added for RAM Pass-Through Logic                                                               ;
++----------------------------------------------------------+-----------------------------------------------+
+; Register Name                                            ; RAM Name                                      ;
++----------------------------------------------------------+-----------------------------------------------+
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[0]  ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[1]  ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[2]  ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[3]  ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[4]  ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[5]  ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[6]  ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[7]  ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[8]  ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[9]  ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[10] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[11] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[12] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[13] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[14] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[15] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[16] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[17] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[18] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[19] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[20] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[21] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[22] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[23] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[24] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[25] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[26] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[27] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[28] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[29] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[30] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[31] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[32] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[33] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0_bypass[34] ; lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[0]  ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[1]  ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[2]  ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[3]  ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[4]  ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[5]  ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[6]  ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[7]  ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[8]  ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[9]  ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[10] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[11] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[12] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[13] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[14] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[15] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[16] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[17] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[18] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[19] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[20] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[21] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[22] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[23] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[24] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[25] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[26] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[27] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[28] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[29] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[30] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[31] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[32] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[33] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
+; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0_bypass[34] ; lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0 ;
++----------------------------------------------------------+-----------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; 3:1                ; 11 bits   ; 22 LEs        ; 0 LEs                ; 22 LEs                 ; Yes        ; |lane|lane_sobel:sobel|lane_linemem:mem_0|wr_address[6] ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |lane|lane_sobel:sobel|lane_linemem:mem_0|rd_address    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for lane_sobel:sobel|lane_g_root_IP:square_root|altsyncram:altsyncram_component|altsyncram_f024:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                  ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                   ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Source assignments for lane_sobel:sobel|lane_linemem:mem_1|altsyncram:ram_rtl_0|altsyncram_0cn1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                               ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Source assignments for lane_sobel:sobel|lane_linemem:mem_0|altsyncram:ram_rtl_0|altsyncram_0cn1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                               ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lane_sobel:sobel|lane_g_root_IP:square_root|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+--------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                         ;
++------------------------------------+----------------------+--------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                      ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                   ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                 ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                 ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                               ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                      ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                                      ;
+; WIDTH_A                            ; 8                    ; Signed Integer                                               ;
+; WIDTHAD_A                          ; 13                   ; Signed Integer                                               ;
+; NUMWORDS_A                         ; 8192                 ; Signed Integer                                               ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                                      ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                      ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                      ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                      ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                      ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                      ;
+; WIDTH_B                            ; 1                    ; Signed Integer                                               ;
+; WIDTHAD_B                          ; 1                    ; Signed Integer                                               ;
+; NUMWORDS_B                         ; 0                    ; Signed Integer                                               ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                      ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                      ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                      ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                      ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                      ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                      ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                      ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                      ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                      ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                      ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                      ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                      ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                               ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer                                               ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                      ;
+; BYTE_SIZE                          ; 8                    ; Signed Integer                                               ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                      ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                      ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                      ;
+; INIT_FILE                          ; lane_g_root.mif      ; Untyped                                                      ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                      ;
+; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                                               ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                      ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                      ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                      ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                      ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                      ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                      ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                      ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                      ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                                               ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                      ;
+; CBXI_PARAMETER                     ; altsyncram_f024      ; Untyped                                                      ;
++------------------------------------+----------------------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lane_sync:control ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; delay          ; 7     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lane_sobel:sobel|lane_linemem:mem_1|altsyncram:ram_rtl_0 ;
++------------------------------------+----------------------+-----------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                          ;
++------------------------------------+----------------------+-----------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                       ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                       ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                       ;
+; WIDTH_A                            ; 12                   ; Untyped                                       ;
+; WIDTHAD_A                          ; 11                   ; Untyped                                       ;
+; NUMWORDS_A                         ; 1280                 ; Untyped                                       ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                       ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                       ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                       ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                       ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                       ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                       ;
+; WIDTH_B                            ; 12                   ; Untyped                                       ;
+; WIDTHAD_B                          ; 11                   ; Untyped                                       ;
+; NUMWORDS_B                         ; 1280                 ; Untyped                                       ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                       ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                       ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                       ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                       ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                       ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                       ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                       ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                       ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                       ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                       ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                       ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                       ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                       ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                       ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                       ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                       ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                                       ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                       ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                       ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                       ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                       ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                       ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                       ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                       ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                       ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                       ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                       ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                       ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                       ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                       ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                       ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                       ;
+; CBXI_PARAMETER                     ; altsyncram_0cn1      ; Untyped                                       ;
++------------------------------------+----------------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lane_sobel:sobel|lane_linemem:mem_0|altsyncram:ram_rtl_0 ;
++------------------------------------+----------------------+-----------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                          ;
++------------------------------------+----------------------+-----------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                       ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                       ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                       ;
+; WIDTH_A                            ; 12                   ; Untyped                                       ;
+; WIDTHAD_A                          ; 11                   ; Untyped                                       ;
+; NUMWORDS_A                         ; 1280                 ; Untyped                                       ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                       ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                       ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                       ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                       ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                       ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                       ;
+; WIDTH_B                            ; 12                   ; Untyped                                       ;
+; WIDTHAD_B                          ; 11                   ; Untyped                                       ;
+; NUMWORDS_B                         ; 1280                 ; Untyped                                       ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                       ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                       ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                       ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                       ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                       ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                       ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                       ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                       ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                       ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                       ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                       ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                       ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                       ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                       ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                       ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                       ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                                       ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                       ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                       ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                       ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                       ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                       ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                       ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                       ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                       ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                       ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                       ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                       ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                       ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                       ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                       ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                       ;
+; CBXI_PARAMETER                     ; altsyncram_0cn1      ; Untyped                                       ;
++------------------------------------+----------------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                        ;
++-------------------------------------------+-----------------------------------------------------------------------------+
+; Name                                      ; Value                                                                       ;
++-------------------------------------------+-----------------------------------------------------------------------------+
+; Number of entity instances                ; 3                                                                           ;
+; Entity Instance                           ; lane_sobel:sobel|lane_g_root_IP:square_root|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                                         ;
+;     -- WIDTH_A                            ; 8                                                                           ;
+;     -- NUMWORDS_A                         ; 8192                                                                        ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                                      ;
+;     -- WIDTH_B                            ; 1                                                                           ;
+;     -- NUMWORDS_B                         ; 0                                                                           ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                      ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                        ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                   ;
+; Entity Instance                           ; lane_sobel:sobel|lane_linemem:mem_1|altsyncram:ram_rtl_0                    ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                                   ;
+;     -- WIDTH_A                            ; 12                                                                          ;
+;     -- NUMWORDS_A                         ; 1280                                                                        ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                ;
+;     -- WIDTH_B                            ; 12                                                                          ;
+;     -- NUMWORDS_B                         ; 1280                                                                        ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                                      ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                        ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                                    ;
+; Entity Instance                           ; lane_sobel:sobel|lane_linemem:mem_0|altsyncram:ram_rtl_0                    ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                                   ;
+;     -- WIDTH_A                            ; 12                                                                          ;
+;     -- NUMWORDS_A                         ; 1280                                                                        ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                ;
+;     -- WIDTH_B                            ; 12                                                                          ;
+;     -- NUMWORDS_B                         ; 1280                                                                        ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                                      ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                        ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                                    ;
++-------------------------------------------+-----------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.4 Build 182 03/12/2014 SJ Web Edition
+    Info: Processing started: Mon Jun 22 01:43:51 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lane -c lane
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file lane_sync.vhd
+    Info (12022): Found design unit 1: lane_sync-behave
+    Info (12023): Found entity 1: lane_sync
+Info (12021): Found 2 design units, including 1 entities, in source file lane_g_root_IP.vhd
+    Info (12022): Found design unit 1: lane_g_root_ip-SYN
+    Info (12023): Found entity 1: lane_g_root_IP
+Info (12021): Found 2 design units, including 1 entities, in source file lane_g_matrix.vhd
+    Info (12022): Found design unit 1: lane_g_matrix-behave
+    Info (12023): Found entity 1: lane_g_matrix
+Info (12021): Found 2 design units, including 1 entities, in source file lane_linemem.vhd
+    Info (12022): Found design unit 1: lane_linemem-behave
+    Info (12023): Found entity 1: lane_linemem
+Info (12021): Found 2 design units, including 1 entities, in source file lane_sobel.vhd
+    Info (12022): Found design unit 1: lane_sobel-behave
+    Info (12023): Found entity 1: lane_sobel
+Info (12021): Found 2 design units, including 1 entities, in source file sim_lane.vhd
+    Info (12022): Found design unit 1: sim_lane-sim
+    Info (12023): Found entity 1: sim_lane
+Info (12021): Found 2 design units, including 1 entities, in source file lane.vhd
+    Info (12022): Found design unit 1: lane-behave
+    Info (12023): Found entity 1: lane
+Info (12127): Elaborating entity "lane" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at lane.vhd(39): object "enable" assigned a value but never read
+Info (12128): Elaborating entity "lane_sobel" for hierarchy "lane_sobel:sobel"
+Info (12128): Elaborating entity "lane_linemem" for hierarchy "lane_sobel:sobel|lane_linemem:mem_0"
+Info (12128): Elaborating entity "lane_g_matrix" for hierarchy "lane_sobel:sobel|lane_g_matrix:g_x"
+Info (12128): Elaborating entity "lane_g_root_IP" for hierarchy "lane_sobel:sobel|lane_g_root_IP:square_root"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "lane_sobel:sobel|lane_g_root_IP:square_root|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "lane_sobel:sobel|lane_g_root_IP:square_root|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "lane_sobel:sobel|lane_g_root_IP:square_root|altsyncram:altsyncram_component" with the following parameter:
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "address_aclr_b" = "NONE"
+    Info (12134): Parameter "address_reg_b" = "CLOCK1"
+    Info (12134): Parameter "byte_size" = "8"
+    Info (12134): Parameter "byteena_aclr_a" = "UNUSED"
+    Info (12134): Parameter "byteena_aclr_b" = "NONE"
+    Info (12134): Parameter "byteena_reg_b" = "CLOCK1"
+    Info (12134): Parameter "clock_enable_core_a" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_core_b" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_input_b" = "NORMAL"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_b" = "NORMAL"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "ecc_pipeline_stage_enabled" = "FALSE"
+    Info (12134): Parameter "enable_ecc" = "FALSE"
+    Info (12134): Parameter "implement_in_les" = "OFF"
+    Info (12134): Parameter "indata_aclr_a" = "UNUSED"
+    Info (12134): Parameter "indata_aclr_b" = "NONE"
+    Info (12134): Parameter "indata_reg_b" = "CLOCK1"
+    Info (12134): Parameter "init_file" = "lane_g_root.mif"
+    Info (12134): Parameter "init_file_layout" = "PORT_A"
+    Info (12134): Parameter "maximum_depth" = "0"
+    Info (12134): Parameter "numwords_a" = "8192"
+    Info (12134): Parameter "numwords_b" = "0"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_aclr_b" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "ram_block_type" = "AUTO"
+    Info (12134): Parameter "rdcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "rdcontrol_reg_b" = "CLOCK1"
+    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "stratixiv_m144k_allow_dual_clocks" = "ON"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_b" = "1"
+    Info (12134): Parameter "width_byteena_a" = "1"
+    Info (12134): Parameter "width_byteena_b" = "1"
+    Info (12134): Parameter "width_eccstatus" = "3"
+    Info (12134): Parameter "widthad_a" = "13"
+    Info (12134): Parameter "widthad_b" = "1"
+    Info (12134): Parameter "wrcontrol_aclr_a" = "UNUSED"
+    Info (12134): Parameter "wrcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_f024.tdf
+    Info (12023): Found entity 1: altsyncram_f024
+Info (12128): Elaborating entity "altsyncram_f024" for hierarchy "lane_sobel:sobel|lane_g_root_IP:square_root|altsyncram:altsyncram_component|altsyncram_f024:auto_generated"
+Info (12128): Elaborating entity "lane_sync" for hierarchy "lane_sync:control"
+Warning (276020): Inferred RAM node "lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning (276020): Inferred RAM node "lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Info (19000): Inferred 2 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "lane_sobel:sobel|lane_linemem:mem_1|ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 12
+        Info (286033): Parameter WIDTHAD_A set to 11
+        Info (286033): Parameter NUMWORDS_A set to 1280
+        Info (286033): Parameter WIDTH_B set to 12
+        Info (286033): Parameter WIDTHAD_B set to 11
+        Info (286033): Parameter NUMWORDS_B set to 1280
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "lane_sobel:sobel|lane_linemem:mem_0|ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 12
+        Info (286033): Parameter WIDTHAD_A set to 11
+        Info (286033): Parameter NUMWORDS_A set to 1280
+        Info (286033): Parameter WIDTH_B set to 12
+        Info (286033): Parameter WIDTHAD_B set to 11
+        Info (286033): Parameter NUMWORDS_B set to 1280
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+Info (12130): Elaborated megafunction instantiation "lane_sobel:sobel|lane_linemem:mem_1|altsyncram:ram_rtl_0"
+Info (12133): Instantiated megafunction "lane_sobel:sobel|lane_linemem:mem_1|altsyncram:ram_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "12"
+    Info (12134): Parameter "WIDTHAD_A" = "11"
+    Info (12134): Parameter "NUMWORDS_A" = "1280"
+    Info (12134): Parameter "WIDTH_B" = "12"
+    Info (12134): Parameter "WIDTHAD_B" = "11"
+    Info (12134): Parameter "NUMWORDS_B" = "1280"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0cn1.tdf
+    Info (12023): Found entity 1: altsyncram_0cn1
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "led[0]" is stuck at GND
+    Warning (13410): Pin "led[1]" is stuck at GND
+    Warning (13410): Pin "led[2]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "enable_in[0]"
+    Warning (15610): No output dependent on input pin "enable_in[1]"
+    Warning (15610): No output dependent on input pin "enable_in[2]"
+Info (21057): Implemented 685 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 32 input pins
+    Info (21059): Implemented 31 output pins
+    Info (21061): Implemented 588 logic cells
+    Info (21064): Implemented 32 RAM segments
+    Info (21062): Implemented 2 DSP elements
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 772 megabytes
+    Info: Processing ended: Mon Jun 22 01:43:53 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

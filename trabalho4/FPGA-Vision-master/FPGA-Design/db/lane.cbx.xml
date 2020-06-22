@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="lane">
+		<CBX_INST_ENTRY INSTANCE_NAME="|lane|lane_sobel:sobel|lane_g_root_IP:square_root|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_f024.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lane|lane_sobel:sobel|lane_linemem:mem_0|altsyncram:ram_rtl_0" CBX_FILE_NAME="altsyncram_6cn1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lane|lane_sobel:sobel|lane_linemem:mem_1|altsyncram:ram_rtl_0" CBX_FILE_NAME="altsyncram_6cn1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

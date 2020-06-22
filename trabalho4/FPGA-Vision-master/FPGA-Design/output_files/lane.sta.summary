@@ -1,0 +1,85 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'input_clk'
+Slack : 5.559
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Setup 'output_clk'
+Slack : 8.815
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'input_clk'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'output_clk'
+Slack : 0.648
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'input_clk'
+Slack : 5.639
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'input_clk'
+Slack : 5.259
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'output_clk'
+Slack : 8.984
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'input_clk'
+Slack : 0.249
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'output_clk'
+Slack : 0.565
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'input_clk'
+Slack : 5.578
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'input_clk'
+Slack : 8.890
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'output_clk'
+Slack : 10.119
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'input_clk'
+Slack : 0.172
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'output_clk'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'input_clk'
+Slack : 5.512
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'input_clk'
+Slack : 9.201
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'output_clk'
+Slack : 10.532
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'input_clk'
+Slack : 0.037
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'output_clk'
+Slack : 0.320
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'input_clk'
+Slack : 5.501
+TNS   : 0.000
+
+------------------------------------------------------------
