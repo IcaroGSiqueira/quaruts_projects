@@ -1,5 +1,3 @@
-
-
 -- lane_g_matrix.vhd
 --
 -- arithmetic for 3x3 matrix of Sobel filter
@@ -38,14 +36,17 @@ process
 begin
    wait until rising_edge(clk);
 	
-	 lum_p1a   <= to_integer(unsigned(in_p1a(11 downto 0)));   --  plus 1
-    lum_p2    <= to_integer(unsigned(in_p2(11 downto 0)));    --  plus 2
-    lum_p1b   <= to_integer(unsigned(in_p1b(11 downto 0)));	--  plus 1
-    lum_m1a   <= to_integer(unsigned(in_m1a(11 downto 0)));	-- minus 1
-    lum_m2    <= to_integer(unsigned(in_m2(11 downto 0)));	-- minus 2
-    lum_m1b   <= to_integer(unsigned(in_m1b(11 downto 0)));   -- minus 1
+	 lum_p1a   <= to_integer(unsigned(in_p1a(11 downto 0)));		--  plus 1
+    lum_p2    <= to_integer(unsigned(in_p2(11 downto 0)));     --  plus 2
+    lum_p1b   <= to_integer(unsigned(in_p1b(11 downto 0)));		--  plus 1
+    lum_m1a   <= to_integer(unsigned(in_m1a(11 downto 0)));		-- minus 1
+    lum_m2    <= to_integer(unsigned(in_m2(11 downto 0)));		-- minus 2
+    lum_m1b   <= to_integer(unsigned(in_m1b(11 downto 0)));    -- minus 1
 	 
-
+    -- add values according to sobel matrix
+    --         |-1  0  1|      | 1  2  1|
+    --         |-2  0  2|  or  | 0  0  0|
+    --         |-1  0  1|      |-1 -2 -1|
     sum   <=  lum_p1a + 2*lum_p2 + lum_p1b - lum_m1a - 2*lum_m2 - lum_m1b;
 
     -- square of sum

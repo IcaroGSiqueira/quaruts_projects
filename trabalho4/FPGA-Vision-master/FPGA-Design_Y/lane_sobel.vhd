@@ -20,8 +20,6 @@ end lane_sobel;
 
 architecture behave of lane_sobel is
 
-signal   lum_rb      : integer range  0 to  4095;
-
   signal tap_lt, tap_ct, tap_rt,
          tap_lc, tap_cc, tap_rc,
          tap_lb, tap_cb, tap_rb : std_logic_vector(11 downto 0);
@@ -37,14 +35,16 @@ signal   lum_rb      : integer range  0 to  4095;
   signal lum_new    : std_logic_vector(7 downto 0);
   
 
-function rgb2y (vec : std_logic_vector(23 downto 0)) return integer is
+function rgb2y (vec : std_logic_vector(23 downto 0)) return std_logic_vector is
 	 variable result : integer range  0 to  4095;
+	 variable result_vec : std_logic_vector(11 downto 0);
 begin
 	-- convert RGB to luminance: Y (5*R + 9*G + 2*B)
 	result := 5*to_integer(unsigned(vec(23 downto 16)))
 			  + 9*to_integer(unsigned(vec(15 downto  8)))
 			  + 2*to_integer(unsigned(vec( 7 downto  0)));
-return result;
+	result_vec := std_logic_vector(to_unsigned(result,12));
+return result_vec;
 end function;
   
 
@@ -54,16 +54,8 @@ begin
 	--tap_rb <= data_in;
 	
 	-- convert RGB to Y with VHDL-function
-										  -- pixel with factor
-	lum_rb	<= rgb2y(data_in);   -- plus 1
+	tap_rb	<= rgb2y(data_in);
 	
-	tap_rb <= std_logic_vector(to_unsigned(lum_rb,12));
-	
-	-- add values according to sobel matrix
-	--         |-1  0  1|      | 1  2  1|
-	--         |-2  0  2|  or  | 0  0  0|
-	--         |-1  0  1|      |-1 -2 -1|
-
 	-- two line memories: output is right-center (rc) and right-top (rt)
 	mem_0 : entity work.lane_linemem
 		port map (clk      => clk,
