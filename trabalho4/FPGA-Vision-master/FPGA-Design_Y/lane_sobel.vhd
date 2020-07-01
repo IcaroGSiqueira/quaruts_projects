@@ -35,16 +35,14 @@ architecture behave of lane_sobel is
   signal lum_new    : std_logic_vector(7 downto 0);
   
 
-function rgb2y (vec : std_logic_vector(23 downto 0)) return std_logic_vector is
+function rgb2y (vec : std_logic_vector(23 downto 0)) return integer is
 	 variable result : integer range  0 to  4095;
-	 variable result_vec : std_logic_vector(11 downto 0);
 begin
 	-- convert RGB to luminance: Y (5*R + 9*G + 2*B)
 	result := 5*to_integer(unsigned(vec(23 downto 16)))
 			  + 9*to_integer(unsigned(vec(15 downto  8)))
 			  + 2*to_integer(unsigned(vec( 7 downto  0)));
-	result_vec := std_logic_vector(to_unsigned(result,12));
-return result_vec;
+return result;
 end function;
   
 
@@ -54,7 +52,7 @@ begin
 	--tap_rb <= data_in;
 	
 	-- convert RGB to Y with VHDL-function
-	tap_rb	<= rgb2y(data_in);
+	tap_rb	<= std_logic_vector(to_unsigned(rgb2y(data_in),12));
 	
 	-- two line memories: output is right-center (rc) and right-top (rt)
 	mem_0 : entity work.lane_linemem

@@ -1,5 +1,3 @@
-
-
 -- lane_linemem.vhd
 --
 -- line memory with 1280 pixel delay
